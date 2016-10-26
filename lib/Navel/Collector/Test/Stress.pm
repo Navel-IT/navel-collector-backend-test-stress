@@ -13,12 +13,12 @@ use Navel::AnyEvent::Pool;
 
 #-> class variables
 
-my $plugin_pool = Navel::AnyEvent::Pool->new;
+my $job_pool = Navel::AnyEvent::Pool->new;
 
 #-> methods
 
 sub init {
-    $plugin_pool->attach_timer(
+    $job_pool->attach_timer(
         name => $_,
         singleton => 1,
         interval => 1,
@@ -39,13 +39,13 @@ sub init {
 }
 
 sub enable {
-    $_->enable for @{$plugin_pool->timers};
+    $_->enable for @{$job_pool->timers};
 
     shift->(1);
 }
 
 sub disable {
-    $_->disable for @{$plugin_pool->timers};
+    $_->disable for @{$job_pool->timers};
 
     shift->(1);
 }
