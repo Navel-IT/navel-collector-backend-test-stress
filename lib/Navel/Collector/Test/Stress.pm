@@ -13,7 +13,7 @@ use Navel::AnyEvent::Pool;
 
 #-> class variables
 
-my $plugin_pool = Navel::AnyEvent::Pool->new();
+my $plugin_pool = Navel::AnyEvent::Pool->new;
 
 #-> methods
 
@@ -23,7 +23,7 @@ sub init {
         singleton => 1,
         interval => 1,
         callback => sub {
-            my $timer = shift->begin();
+            my $timer = shift->begin;
 
             W::queue()->enqueue(
                 W::event(
@@ -33,19 +33,19 @@ sub init {
                 )
             );
 
-            $timer->end();
+            $timer->end;
         }
     ) for 0..W::collector()->{backend_input}->{number_of_job};
 }
 
 sub enable {
-    $_->enable() for @{$plugin_pool->timers()};
+    $_->enable for @{$plugin_pool->timers};
 
     shift->(1);
 }
 
 sub disable {
-    $_->disable() for @{$plugin_pool->timers()};
+    $_->disable for @{$plugin_pool->timers};
 
     shift->(1);
 }
