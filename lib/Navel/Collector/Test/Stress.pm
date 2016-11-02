@@ -9,6 +9,8 @@ package Navel::Collector::Test::Stress;
 
 use Navel::Base;
 
+use constant EVENT_CLASS => undef;
+
 use Navel::AnyEvent::Pool;
 
 #-> class variables
