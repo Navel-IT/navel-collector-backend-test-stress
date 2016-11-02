@@ -5,7 +5,7 @@
 
 #-> initialization
 
-package Navel::Collector::Test::Stress;
+package Navel::Collector::Test::Stress 0.1;
 
 use Navel::Base;
 
