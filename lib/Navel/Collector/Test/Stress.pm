@@ -17,7 +17,7 @@ use Navel::AnyEvent::Pool;
 
 my $job_pool = Navel::AnyEvent::Pool->new;
 
-#-> methods
+#-> functions
 
 sub init {
     $job_pool->attach_timer(
@@ -51,10 +51,6 @@ sub disable {
 
     shift->(1);
 }
-
-# sub AUTOLOAD {}
-
-# sub DESTROY {}
 
 1;
 
