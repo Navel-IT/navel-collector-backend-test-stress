@@ -29,6 +29,7 @@ sub init {
 
             W::queue()->enqueue(
                 W::event(
+                    __PACKAGE__,
                     [
                         0..W::collector()->{backend_input}->{array_size}
                     ]
