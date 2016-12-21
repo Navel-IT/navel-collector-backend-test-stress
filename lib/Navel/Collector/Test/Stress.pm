@@ -20,25 +20,27 @@ my $job_pool = Navel::AnyEvent::Pool->new;
 #-> functions
 
 sub init {
-    $job_pool->attach_timer(
-        name => $_,
-        singleton => 1,
-        interval => 1,
-        callback => sub {
-            my $timer = shift->begin;
+    for (my $i = 0; $i < W::collector()->{backend_input}->{number_of_job}; $i++) {
+        $job_pool->attach_timer(
+            name => $i,
+            singleton => 1,
+            interval => 1,
+            callback => sub {
+                my $timer = shift->begin;
 
-            W::queue()->enqueue(
-                W::event(
-                    id => __PACKAGE__,
-                    data => [
-                        0..W::collector()->{backend_input}->{array_size}
-                    ]
-                )
-            );
+                W::queue()->enqueue(
+                    W::event(
+                        id => $timer->{name},
+                        data => [
+                            0..W::collector()->{backend_input}->{array_size}
+                        ]
+                    )
+                );
 
-            $timer->end;
-        }
-    ) for 0..W::collector()->{backend_input}->{number_of_job};
+                $timer->end;
+            }
+        );
+    }
 }
 
 sub enable {
