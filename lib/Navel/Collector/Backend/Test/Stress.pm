@@ -1,11 +1,11 @@
 # Copyright (C) 2015-2017 Yoann Le Garff, Nicolas Boquet and Yann Le Bras
-# navel-collector-test-stress is licensed under the Apache License, Version 2.0
+# navel-collector-backend-test-stress is licensed under the Apache License, Version 2.0
 
 #-> BEGIN
 
 #-> initialization
 
-package Navel::Collector::Test::Stress 0.1;
+package Navel::Collector::Backend::Test::Stress 0.1;
 
 use Navel::Base;
 
@@ -75,6 +75,6 @@ Copyright (C) 2015-2017 Yoann Le Garff, Nicolas Boquet and Yann Le Bras
 
 =head1 LICENSE
 
-navel-collector-test-stress is licensed under the Apache License, Version 2.0
+navel-collector-backend-test-stress is licensed under the Apache License, Version 2.0
 
 =cut

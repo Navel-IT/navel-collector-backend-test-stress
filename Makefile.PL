@@ -1,5 +1,5 @@
 # Copyright (C) 2015-2017 Yoann Le Garff, Nicolas Boquet and Yann Le Bras
-# navel-collector-test-stress is licensed under the Apache License, Version 2.0
+# navel-collector-backend-test-stress is licensed under the Apache License, Version 2.0
 
 #-> BEGIN
 
@@ -15,9 +15,9 @@ use ExtUtils::MakeMaker;
 my $min_perl_version = '5.18.0';
 
 WriteMakefile(
-    NAME => 'Navel::Collector::Test::Stress',
-    VERSION_FROM => 'lib/Navel/Collector/Test/Stress.pm',
-    ABSTRACT => 'navel-collector-test-stress',
+    NAME => 'Navel::Collector::Backend::Test::Stress',
+    VERSION_FROM => 'lib/Navel/Collector/Backend/Test/Stress.pm',
+    ABSTRACT => 'navel-collector-backend-test-stress',
     AUTHOR => 'Yoann Le Garff, Nicolas Boquet and Yann Le Bras',
     LICENSE => 'apache_2_0',
     META_MERGE => {
@@ -26,7 +26,7 @@ WriteMakefile(
         },
         resources => {
             license => 'http://www.apache.org/licenses/LICENSE-2.0.html',
-            repository => 'http://github.com/Navel-IT/navel-collector-test-stress'
+            repository => 'http://github.com/Navel-IT/navel-collector-backend-test-stress'
         }
     },
     MIN_PERL_VERSION => $min_perl_version,
